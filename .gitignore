@@ -1,0 +1,13 @@
+*virenv/
+trash/
+.vscode/
+__pycache__/
+*.pyc
+
+# wheel stuff
+build/
+dist/
+varenv.egg-info
+
+# tests
+# test/
