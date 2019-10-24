@@ -3,7 +3,6 @@ trash/
 .vscode/
 __pycache__/
 *.pyc
-*varenv.conf.json
 
 # wheel stuff
 build/

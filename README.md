@@ -1,5 +1,5 @@
 # varenv
-[![current](https://img.shields.io/badge/version-1.0.1--rc%20-brightgreen.svg)](https://pypi.org/project/simplestRPC/) :green_heart:
+[![current](https://img.shields.io/badge/version-1.0.1%20-brightgreen.svg)](https://pypi.org/project/simplestRPC/) :green_heart:
 [![license](https://img.shields.io/badge/license-zlib-brightgreen.svg)](https://www.zlib.net/zlib_license.html)
 [![python](https://img.shields.io/badge/python-3.5+-brightgreen.svg)](https://python.org)
 
@@ -22,11 +22,15 @@ Create a file called 'varenv.conf.json' at your project's root path like this:
 
 now use it like this in your program:
 ```python
-import os
 import varenv
 
-my_server_ip = os.getenv("SRPC_SERVER")
-my_server_port = os.getenv("SRPC_SERVER_PORT")
+my_server_ip = varenv.get_env("SRPC_SERVER")
+my_server_port = varenv.get_env("SRPC_SERVER_PORT")
+
+# after a while, for some reason, something chaged your enviroment variables values
+# then refresh it
+varenv.refresh()
+new_server_port = varenv.get_env("SRPC_SERVER_PORT")
 ```
 
 <br>

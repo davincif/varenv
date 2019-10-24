@@ -42,7 +42,7 @@ setup(
 	# For a discussion on single-sourcing the version across setup.py and the
 	# project code, see
 	# https://packaging.python.org/en/latest/single_source_version.html
-	version='1.0.1-rc',  # Required
+	version='1.0.1',  # Required
 
 	# This is a one-line description or tagline of what your project does. This
 	# corresponds to the "Summary" metadata field:
@@ -83,7 +83,7 @@ setup(
 
 	# This should be a valid email address corresponding to the author listed
 	# above.
-	author_email='LDaVinciF@gmail.com',  # Optional
+	author_email='davincif@davincif.com',  # Optional
 
 	# Classifiers help users find your project by categorizing it.
 	#
@@ -107,7 +107,7 @@ setup(
 		'Programming Language :: Python :: 3.4',
 		'Programming Language :: Python :: 3.5',
 		'Programming Language :: Python :: 3.6',
-		# 'Programming Language :: Python :: 3.7',
+		'Programming Language :: Python :: 3.7',
 	],
 
 	# This field adds keywords for your project which will appear on the
