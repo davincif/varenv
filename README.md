@@ -22,7 +22,7 @@ Create a file called 'varenv.conf.json' at your project's root path like this:
 
 now use it like this in your program:
 ```python
-import varenv
+import varenv.varenv as varenv
 
 my_server_ip = varenv.get_env("SRPC_SERVER")
 my_server_port = varenv.get_env("SRPC_SERVER_PORT")
