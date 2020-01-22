@@ -1,4 +1,4 @@
-*.virenv/
+*.virenv*/
 trash/
 .vscode/
 __pycache__/
