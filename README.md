@@ -1,5 +1,5 @@
 # varenv
-[![current](https://img.shields.io/badge/version-1.0.2%20-brightgreen.svg)](https://pypi.org/project/simplestRPC/) :green_heart:
+[![current](https://img.shields.io/badge/version-1.0.3%20-brightgreen.svg)](https://pypi.org/project/simplestRPC/) :green_heart:
 [![license](https://img.shields.io/badge/license-zlib-brightgreen.svg)](https://www.zlib.net/zlib_license.html)
 [![python](https://img.shields.io/badge/python-3.5+-brightgreen.svg)](https://python.org)
 
@@ -72,4 +72,5 @@ So let me know if you want to help, or also if you need any formal concentiment 
 <br>
 
 ##### See also
-[SimplestRPC](https://github.com/davincif/simplestRPC) project
+- [Dependency Manager](https://github.com/davincif/dependency_manager) project: A simple way of managing pip dev and prod dependencies.
+- [SimplestRPC](https://github.com/davincif/simplestRPC) project: A simple RPC for python - *study project*.

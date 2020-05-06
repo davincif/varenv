@@ -42,7 +42,7 @@ setup(
 	# For a discussion on single-sourcing the version across setup.py and the
 	# project code, see
 	# https://packaging.python.org/en/latest/single_source_version.html
-	version='1.0.2',  # Required
+	version='1.0.3',  # Required
 
 	# This is a one-line description or tagline of what your project does. This
 	# corresponds to the "Summary" metadata field:
@@ -57,7 +57,7 @@ setup(
 	#
 	# This field corresponds to the "Description" metadata field:
 	# https://packaging.python.org/specifications/core-metadata/#description-optional
-	long_description='''Just add your environment varible into a varenv.conf.json file in the top of your project and keep working. The varenv will not overwrite any already existent environment variable''',  # Optional
+	long_description=long_description,  # Optional
 
 	# Denotes that our long_description is in Markdown; valid values are
 	# text/plain, text/x-rst, and text/markdown
@@ -69,7 +69,7 @@ setup(
 	#
 	# This field corresponds to the "Description-Content-Type" metadata field:
 	# https://packaging.python.org/specifications/core-metadata/#description-content-type-optional
-	long_description_content_type='text/plain',  # Optional (see note above)
+	long_description_content_type='text/markdown',  # Optional (see note above)
 
 	# This should be a valid link to your project's main homepage.
 	#
@@ -97,21 +97,21 @@ setup(
 
 		# Indicate who your project is intended for
 		'Intended Audience :: Developers',
-		'Topic :: Software Development :: Build Tools',
+		'Topic :: Software Development',
+		'Environment :: Console',
 
 		# Pick your license as you wish
 		'License :: OSI Approved :: zlib/libpng License',
 
 		# Specify the Python versions you support here. In particular, ensure
 		# that you indicate whether you support Python 2, Python 3 or both.
-		'Programming Language :: Python :: 3.4',
 		'Programming Language :: Python :: 3.5',
 		'Programming Language :: Python :: 3.6',
 		'Programming Language :: Python :: 3.7',
 		'Programming Language :: Python :: 3.8',
 	],
 
-	python_requires='>=3.5, <3.9',
+	python_requires='>=3.5',
 
 	# This field adds keywords for your project which will appear on the
 	# project page. What does your project relate to?
@@ -128,7 +128,7 @@ setup(
 	#
 	#   py_modules=["my_module"],
 	#
-	packages=find_packages(exclude=['contrib', 'docs', 'tests', '.vscode', 'virenv', 'trash']),  # Required
+	packages=find_packages(exclude=['contrib', 'docs', 'tests', '.vscode', '.virenv*', 'trash']),  # Required
 
 	# This field lists other packages that your project depends on to run.
 	# Any package you put here will be installed by pip when your project is
