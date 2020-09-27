@@ -31,8 +31,12 @@ def __load_envy():
 
 		typeof = type(conf_json[config])
 		value = conf_json[config] if typeof is str else str(conf_json[config])
-		if os.getenv(config) is None:
+		envval = os.getenv(config)
+		if envval is None:
 			os.environ[config] = value
+		else:
+			value = envval
+			typeof = type(envval)
 		envyVars[config] = {'value': value, 'type': typeof}
 
 def __update_and_clean_envy():
@@ -71,7 +75,7 @@ def get_env(varName, varType=str):
 	value = os.getenv(varName)
 	if value is not None:
 		envyVars[varName] = {'value': value, 'type': varType}
-		return typeof(value)
+		return type(value)
 
 	return None
 
