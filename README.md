@@ -1,4 +1,4 @@
-# varenv
+# Varenv
 [![current](https://img.shields.io/badge/version-1.0.4%20-brightgreen.svg)](https://pypi.org/project/simplestRPC/) :green_heart:
 [![license](https://img.shields.io/badge/license-zlib-brightgreen.svg)](https://www.zlib.net/zlib_license.html)
 [![python](https://img.shields.io/badge/python-3.5+-brightgreen.svg)](https://python.org)
@@ -11,13 +11,20 @@ This library was designed to be inbuilt in pojects that, when going to productio
 
 ### Usage
 
-Create a file called 'varenv.conf.json' at your project's root path like this:
+Create a file called `varenv.conf.json` at your project's root path like this:
 ```json
 {
   "SRPC_SERVER": "127.0.0.1",
   "SRPC_SERVER_PORT": "2727",
   "ANY_OTHER_VARIABLE_I_DESIRE": 567865
 }
+```
+
+It can also be YAML file called `varenv.conf.yml` or `varenv.conf.yaml`. The equivalent to the above file being:
+```yml
+SRPC_SERVER: 127.0.0.1
+SRPC_SERVER_PORT: '2727'
+ANY_OTHER_VARIABLE_I_DESIRE: 567865
 ```
 
 now use it like this in your program:
@@ -59,6 +66,8 @@ by bash when calling your python program:
 ```python
 VARENV_CONF_FILE_PATH=/folder/my_path/virenv.conf.json python3 my_program.py
 ```
+
+<br>
 
 ---
 

@@ -1,0 +1,347 @@
+{
+	"development": [
+		"dependencymanager",
+		"autopep8",
+		"toml",
+		"pycodestyle",
+		"twine",
+		"requests",
+		"urllib3",
+		"idna",
+		"certifi",
+		"chardet",
+		"rfc3986",
+		"pkginfo",
+		"tqdm",
+		"readme-renderer",
+		"docutils",
+		"pygments",
+		"six",
+		"bleach",
+		"packaging",
+		"pyparsing",
+		"webencodings",
+		"keyring",
+		"jeepney",
+		"secretstorage",
+		"cryptography",
+		"cffi",
+		"pycparser",
+		"colorama",
+		"requests-toolbelt",
+		"PyYAML"
+	],
+	"production": [],
+	"packs": {
+		"dependencymanager": {
+			"head": true,
+			"version": "1.0.0",
+			"requires": [],
+			"required-by": [],
+			"dev": true
+		},
+		"autopep8": {
+			"head": true,
+			"version": "1.5.5",
+			"requires": [
+				"toml",
+				"pycodestyle"
+			],
+			"required-by": [],
+			"dev": true
+		},
+		"toml": {
+			"head": false,
+			"version": "0.10.2",
+			"requires": [],
+			"required-by": [
+				"autopep8"
+			],
+			"dev": true
+		},
+		"pycodestyle": {
+			"head": false,
+			"version": "2.6.0",
+			"requires": [],
+			"required-by": [
+				"autopep8"
+			],
+			"dev": true
+		},
+		"twine": {
+			"head": true,
+			"version": "3.3.0",
+			"requires": [
+				"requests",
+				"rfc3986",
+				"pkginfo",
+				"tqdm",
+				"readme-renderer",
+				"keyring",
+				"colorama",
+				"requests-toolbelt"
+			],
+			"required-by": [],
+			"dev": true
+		},
+		"requests": {
+			"head": false,
+			"version": "2.25.1",
+			"requires": [
+				"urllib3",
+				"idna",
+				"certifi",
+				"chardet"
+			],
+			"required-by": [
+				"twine",
+				"requests-toolbelt"
+			],
+			"dev": true
+		},
+		"urllib3": {
+			"head": false,
+			"version": "1.26.3",
+			"requires": [],
+			"required-by": [
+				"requests"
+			],
+			"dev": true
+		},
+		"idna": {
+			"head": false,
+			"version": "2.10",
+			"requires": [],
+			"required-by": [
+				"requests"
+			],
+			"dev": true
+		},
+		"certifi": {
+			"head": false,
+			"version": "2020.12.5",
+			"requires": [],
+			"required-by": [
+				"requests"
+			],
+			"dev": true
+		},
+		"chardet": {
+			"head": false,
+			"version": "4.0.0",
+			"requires": [],
+			"required-by": [
+				"requests"
+			],
+			"dev": true
+		},
+		"rfc3986": {
+			"head": false,
+			"version": "1.4.0",
+			"requires": [],
+			"required-by": [
+				"twine"
+			],
+			"dev": true
+		},
+		"pkginfo": {
+			"head": false,
+			"version": "1.7.0",
+			"requires": [],
+			"required-by": [
+				"twine"
+			],
+			"dev": true
+		},
+		"tqdm": {
+			"head": false,
+			"version": "4.56.2",
+			"requires": [],
+			"required-by": [
+				"twine"
+			],
+			"dev": true
+		},
+		"readme-renderer": {
+			"head": false,
+			"version": "28.0",
+			"requires": [
+				"docutils",
+				"pygments",
+				"six",
+				"bleach"
+			],
+			"required-by": [
+				"twine"
+			],
+			"dev": true
+		},
+		"docutils": {
+			"head": false,
+			"version": "0.16",
+			"requires": [],
+			"required-by": [
+				"readme-renderer"
+			],
+			"dev": true
+		},
+		"pygments": {
+			"head": false,
+			"version": "2.8.0",
+			"requires": [],
+			"required-by": [
+				"readme-renderer"
+			],
+			"dev": true
+		},
+		"six": {
+			"head": false,
+			"version": "1.15.0",
+			"requires": [],
+			"required-by": [
+				"readme-renderer",
+				"bleach"
+			],
+			"dev": true
+		},
+		"bleach": {
+			"head": false,
+			"version": "3.3.0",
+			"requires": [
+				"packaging",
+				"six",
+				"webencodings"
+			],
+			"required-by": [
+				"readme-renderer"
+			],
+			"dev": true
+		},
+		"packaging": {
+			"head": false,
+			"version": "20.9",
+			"requires": [
+				"pyparsing"
+			],
+			"required-by": [
+				"bleach"
+			],
+			"dev": true
+		},
+		"pyparsing": {
+			"head": false,
+			"version": "2.4.7",
+			"requires": [],
+			"required-by": [
+				"packaging"
+			],
+			"dev": true
+		},
+		"webencodings": {
+			"head": false,
+			"version": "0.5.1",
+			"requires": [],
+			"required-by": [
+				"bleach"
+			],
+			"dev": true
+		},
+		"keyring": {
+			"head": false,
+			"version": "22.0.1",
+			"requires": [
+				"jeepney",
+				"secretstorage"
+			],
+			"required-by": [
+				"twine"
+			],
+			"dev": true
+		},
+		"jeepney": {
+			"head": false,
+			"version": "0.6.0",
+			"requires": [],
+			"required-by": [
+				"secretstorage",
+				"keyring"
+			],
+			"dev": true
+		},
+		"secretstorage": {
+			"head": false,
+			"version": "3.3.1",
+			"requires": [
+				"jeepney",
+				"cryptography"
+			],
+			"required-by": [
+				"keyring"
+			],
+			"dev": true
+		},
+		"cryptography": {
+			"head": false,
+			"version": "3.4.6",
+			"requires": [
+				"cffi"
+			],
+			"required-by": [
+				"secretstorage"
+			],
+			"dev": true
+		},
+		"cffi": {
+			"head": false,
+			"version": "1.14.5",
+			"requires": [
+				"pycparser"
+			],
+			"required-by": [
+				"cryptography"
+			],
+			"dev": true
+		},
+		"pycparser": {
+			"head": false,
+			"version": "2.20",
+			"requires": [],
+			"required-by": [
+				"cffi"
+			],
+			"dev": true
+		},
+		"colorama": {
+			"head": false,
+			"version": "0.4.4",
+			"requires": [],
+			"required-by": [
+				"twine"
+			],
+			"dev": true
+		},
+		"requests-toolbelt": {
+			"head": false,
+			"version": "0.9.1",
+			"requires": [
+				"requests"
+			],
+			"required-by": [
+				"twine"
+			],
+			"dev": true
+		},
+		"PyYAML": {
+			"head": true,
+			"version": "5.4.1",
+			"requires": [],
+			"required-by": [],
+			"dev": true
+		}
+	},
+	"pipdeps": [
+		"pip",
+		"setuptools",
+		"wheel"
+	]
+}
