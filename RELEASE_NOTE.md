@@ -1,5 +1,5 @@
 # Varenv Release Note
-* version **1.0.5**
+* version **1.0.6**
 * date **17/12/2021**
 
 ## Enhancement
@@ -9,3 +9,4 @@
 
 ## Features
 * Accepting YAML as config file.
+* variables now can have alias.
