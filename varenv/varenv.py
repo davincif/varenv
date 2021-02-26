@@ -34,70 +34,24 @@ def __detect_confile_extension():
     return [filetype, fileext]
 
 
-def __search_alias(varname: str, conf_dict):
-    alias_found = ''
-    value = None
-
-    if 'alias' not in conf_dict[varname]:
-        print("Varenv error: variable '%s' has no alias. Ignoring..." % varname)
-    elif 'value' not in conf_dict[varname]:
-        print("Varenv error: variable '%s' has no value. Ignoring..." % varname)
-    else:
-        for alias in conf_dict[varname]['alias']:
-            envval = os.getenv(alias)
-            if envval is not None:
-                # check of unsuported types
-                if not isinstance(conf_dict[varname]['value'], (int, float, complex, str, bool)):
-                    raise TypeError("%s, with value: %s. Is of type %s but only (int, float, complex, str, bool) are supported yet" % (
-                        varname, str(conf_dict[varname]['value']), type(conf_dict[varname]['value'])))
-
-                # set responses
-                alias_found = alias
-                value = envval
-                break
-
-    return [alias_found, value]
-
-
 def __get_var(varname: str, conf_dict):
     value = None
 
     typeof = type(conf_dict[varname])
     # check of unsuported types
-    if not isinstance(conf_dict[varname], (int, float, complex, str, bool, dict)):
+    if not isinstance(conf_dict[varname], (int, float, complex, str, bool)):
         raise TypeError("%s, with value: %s. Is of type %s but only (int, float, complex, str, bool) are supported yet" % (
             varname, str(conf_dict[varname]), type(conf_dict[varname])))
 
-    # check which variable and value is gonna be added, if any
-    if typeof is dict:
-        # check if object has the needed params
-        if 'alias' not in conf_dict[varname]:
-            varname = ''
-            print("Varenv error: variable '%s' has no alias. Ignoring..." % varname)
-        elif 'value' not in conf_dict[varname]:
-            varname = ''
-            print("Varenv error: variable '%s' has no value. Ignoring..." % varname)
-        else:
-            # search for the alias
-            varfound, valuefound = __search_alias(varname, conf_dict)
-            if not varfound:
-                value = conf_dict[varname]['value']
-            else:
-                varname = varfound
-                value = valuefound
-            typeof = type(value)
+    typeof = type(conf_dict[varname])
+    value = conf_dict[varname] if typeof is str else str(conf_dict[varname])
+    envval = os.getenv(varname)
+    if envval is None:
+        os.environ[varname] = value
     else:
-        # get var value, add on the os env and the envyVars obj
-        value = conf_dict[varname]
-
-    # now add value to varname if any was found
-    if varname:
-        value = value if typeof is str else str(value)
-        envval = os.getenv(varname)
-        if envval is None:
-            os.environ[varname] = value
-        else:
-            typeof = type(envval)
+        value = envval
+        typeof = type(envval)
+    envyVars[varname] = {'value': value, 'type': typeof}
 
     return [value, typeof]
 
@@ -177,9 +131,9 @@ def get_env(varName, varType=str):
     value = os.getenv(varName)
     if value is not None:
         envyVars[varName] = {'value': value, 'type': varType}
-        return type(value)
-
-    return None
+        return varType(value)
+    else:
+        return None
 
 
 refresh()

@@ -1,5 +1,5 @@
 # Varenv
-[![current](https://img.shields.io/badge/version-1.0.6%20-brightgreen.svg)](https://pypi.org/project/simplestRPC/) :green_heart:
+[![current](https://img.shields.io/badge/version-1.0.7%20-brightgreen.svg)](https://pypi.org/project/simplestRPC/) :green_heart:
 [![license](https://img.shields.io/badge/license-zlib-brightgreen.svg)](https://www.zlib.net/zlib_license.html)
 [![python](https://img.shields.io/badge/python-3.5+-brightgreen.svg)](https://python.org)
 
@@ -42,8 +42,6 @@ varenv.refresh()
 new_server_port = varenv.get_env("SRPC_SERVER_PORT")
 ```
 
-<br>
-
 If you want to change the location of the *virenv.conf.json* file, you can define a environment variable called **VARENV_CONF_FILE_PATH** to any path you desire.
 
 You can do that in a variaty of ways, here is two exemples:
@@ -55,57 +53,15 @@ os.environ['VARENV_CONF_FILE_PATH'] = '/folder/my_path/virenv.conf.json'
 import varenv
 ```
 
-<br>
-
 by your .bashrc file:
 ```python
 VARENV_CONF_FILE_PATH=/folder/my_path/virenv.conf.json
 ```
 
-<br>
-
 by bash when calling your python program:
 ```python
 VARENV_CONF_FILE_PATH=/folder/my_path/virenv.conf.json python3 my_program.py
 ```
-
-<br>
-
-## Using Variales with Alias
-In the version 1.0.6 a new feature was added thinking about the following user case: considering the existense of 3 clusters environments in a company's cloud system, let's say: development, production and homolog; and a CI/CD server like GitLab's* one *─[have a look](https://docs.gitlab.com/ee/ci/)─* is also being used. It may be needed to use the same variable with different values across all these clusters, this can lead to a problem when configuring that on GitLab's enviroment variables.
-
-**Exemple**: Supposing the need to define a database password. That's gonna have different values on the development, production and homolog clusters enviroments, also it's gotta a value for the developer to use in his personal machine. To approach this question, define the *varenv.conf.yml* file like this:
-```yml
-DATA_BASE_ENDPOINT: localhost
-DATA_BASE_PORT: '5432'
-DATA_BASE_PASSWORD:
-    alias:
-        - DATA_BASE_PASSWORD_PROD
-        - DATA_BASE_PASSWORD_HOMOLOG
-        - DATA_BASE_PASSWORD_DEV
-    value: p@ssword_f0r_the_developer
-ANY_OTHER_VARIABLE_I_DESIRE: 567865
-```
-In the python code call the variable *DATA_BASE_PASSWORD* like this:
-```python
-import varenv.varenv as varenv
-
-
-data_base_endpoint = varenv.get_env("DATA_BASE_ENDPOINT")
-data_base_port = varenv.get_env("DATA_BASE_PORT")
-data_base_password = varenv.get_env("DATA_BASE_PASSWORD")
-
-# NOTE: the value defined within the code is gonna be the dict's key that defines the alias in the config file.
-
-```
-In the CI/CD server define the variables: *DATA_BASE_PASSWORD_PROD*, *DATA_BASE_PASSWORD_HOMOLOG* and *DATA_BASE_PASSWORD_DEV*, passing each one to it's respective cluster.
-
-<br>
-
-### How does it work?
-When the Varenv get started and the variable with an alias is found, the module will search for the presence of every value in the alias array in the enviroment, stoping at the first match case found.
-
-**Note**: The variables are gonna be searched at the same order as presented in the alias array in the file, and be resented to the programmer as in the object key. So if, for whatever reason, in the above exemple *DATA_BASE_PASSWORD_PROD* and *DATA_BASE_PASSWORD_DEV* get defined in the same enviroment, only the value of the first one will be taken into consideration and will be available in code as *DATA_BASE_PASSWORD*.
 
 <br>
 

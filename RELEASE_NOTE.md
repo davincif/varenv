@@ -1,12 +1,9 @@
 # Varenv Release Note
-* version **1.0.6**
-* date **17/12/2021**
+* version **1.0.7**
+* date **26/02/2021**
 
-## Enhancement
-* Better code quality, pep8 applied.
-* __CONF_FILE variable being attributed in a wrong *~and silly~* way corrected.
-* Do not fail when file is not found, only warn.
+## BigFix
+* on get_env return the correct variable when it's not available on the local env file
 
-## Features
-* Accepting YAML as config file.
-* variables now can have alias.
+## Features Removal
+* variables can no longer have alias.
