@@ -6,7 +6,7 @@ twine==3.3.0
 requests==2.25.1
 urllib3==1.26.3
 idna==2.10
-certifi==2020.12.5
+certifi==2022.12.7
 chardet==4.0.0
 rfc3986==1.4.0
 pkginfo==1.7.0
